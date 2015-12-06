@@ -1,0 +1,15 @@
+1. 
+  
+A. I used the head and tail commands per the instructions.
+ 
+B. I used cat to print the whole file
+  
+C. It looks like these are chipotle orders that use a unique ID (first in each row) for each order.  At the bottom of the text, I see what
+  looks like column headers "order ID, quantity"
+
+2. Using we -l
+3. Using wc -l chipotle.tsv, I returned 4,623 lines.
+4. Chicken: 1565 Steak 	706 - I tried a few different things here, but in order to find the number of occurrences of each type of meat I used “grep –o ‘Chicken’ chipotle.tsv | wc –l” and the same for steak.  I read the help menu and I also googled it.
+5. Way more black beans – I used grep ‘chicken’ chipotle.tsv | grep ‘Black Beans’ chipotle.tsv | wc –l.  from here I could see that there are a great deal more chicken orders with black beans than with pinto (an interesting discovery).
+6. I did not find a way to return a number, but since there were so few files, I easily counted them with the following code: “find . –name *.csv*” there were 2 .tsv files and 11 .csv files.
+7. I used “grep –r ‘dictionary’ . | wc, returning  88, 1,447, 15,051 (so 1,447 times).
