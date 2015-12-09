@@ -1,0 +1,47 @@
+import csv
+with open('chipotle.tsv', mode='rU') as f:
+    file_nested_list = [row for row in csv.reader(f, delimiter='\t')]
+    #had to grab so help here...was a bit confused but I am really building a spread sheet with my code
+    head = file_nested_list[0]
+    data = file_nested_list[1:]
+    #I used something from code academy here...since the data is everything after the first line, makes the
+    #command fairly simple
+    price = [float(row[4][1:]) for row in data]
+    #Upon visual inspection, it was clear that the order's price was in row 5 (4) I just need to add as many unique
+    #IDs (order numbers)
+    total_price = sum([float(row[4][1:]) for row in data])
+    #trial and error-needed to sum all of the rows
+    average_price = total_price / 1834
+    print average_price
+    #now rounded
+    print round(average_price, 2)
+    #Used code given, found this next part tough
+    distinct_items = set([row[2] for row in data])
+    distinct_items
+    soda_orders = []
+for row in data:
+    if 'Canned' in row[2]:
+        soda_orders = [row for row in data if 'Canned Soda' in row[2] or 'Canned Soft Drink' in row[2]]
+soda_orders[0:5]
+sodas = [row[3][1:-1] for row in data if 'Canned' in row[2]]
+unique_sodas = set([row[3][1:-1] for row in data if 'Canned' in row[2]])
+unique_sodas
+print unique_sodas
+#counting up burritos below, similar to code academy
+burrito_count = 0
+for row in data:
+    if 'Burrito' in row[2]:
+        burrito_count = burrito_count + 1
+burrito_count = 0
+for row in data:
+    if 'Burrito' in row[2]:
+        burrito_count = burrito_count + 1
+burrito_count = 0
+topping_count = 0
+#Topping Count, had some help
+for row in data:
+    if 'Burrito' in row[2]:
+        burrito_count += 1
+        topping_count += (row[3].count(',') + 1)
+names = ['Nathan', 'Erica', 'John', 'Laura']
+name_count = {}
