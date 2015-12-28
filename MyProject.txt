@@ -1,0 +1,5 @@
+For my project, I would like to 
+1.	Analyze the correlation between the spread between 1M LIBOR/3MLIBOR and the spread between swap rates and treasuries.
+2.	Predict, with different degrees of certainty, possible future spreads (eg. 80% chance of spread compression, given X).
+3.	Depending on what information I glean from 1 and 2, I would like to analyze the correlation between weather patterns and treasury rates/spreads of emerging market (EM) governments of developing economies. 
+I think that all of these things are related.
